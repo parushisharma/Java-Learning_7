@@ -76,17 +76,24 @@ public class LinkedList<E> implements Iterable<E>{
 	 * @param 	tmpCountry			the name of the country/object that you want to find.
 	 * @return	Country 			the name of the country or null if the country is not found
 	 */
-	public E contains(E tmpCountry) {
+	public boolean contains(E tmpCountry) {
 		//CountryNode tmp = new CountryNode(tmpCountry);
 		Node<E> curr = this.node;
-		while (curr != null) {
-			
+		while (curr != null && !curr.getData().equals(0)) {
+			/*
 			if (curr.getData().getName().equals(tmpCountry.getName())) {
 				return curr.getCountry();	
-			} 	
+			} 
+			*/	
 			curr = curr.getNext();
-		} 
-		return null;
+		}
+			if(curr != null) {
+				return true;
+			}
+			else {
+				return false;
+			}
+		
 	}
 	
 	/**
