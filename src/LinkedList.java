@@ -2,16 +2,17 @@
  * This class holds linked list of CountryNode objects, that can store as many objects
  * as the user wants to add to it. 
  */
+import java.util.Iterator;
 
-public class CountryList {
+public class LinkedList<E> implements Iterable<E>{
 	// Instances that are private to the user 
-	private CountryNode node; 
+	private Node<E> node; 
 	
 	/**
 	 * Constructor that sets up the node. 
 	 * 
 	 */
-	public CountryList () {
+	public LinkedList () {
 		this.node = null;
 	}
 	
@@ -21,8 +22,8 @@ public class CountryList {
 	 * @param 		index 			The index of that you want 
 	 * @return		Country			the name of the country at the index
 	 */
-	public Country getIndex(int index) {
-		CountryNode current = this.node;
+	public E getIndex(int index) {
+		Node<E> current = this.node;
 		if(current == null) {
 			return null;
 		}
@@ -33,21 +34,21 @@ public class CountryList {
 			}
 			current = current.getNext();
 		}
-		return current.getCountry();
+		return current.getData();
 	}
 	
 	/**
 	 * A method that adds a country object to the end of the list. 
 	 * @param 	country			The country object you want to add.
 	 */
-	public void add(Country country) {
+	public void add(E data) {
 		if( this.node == null) {
-		CountryNode first = new CountryNode(country);
+		Node<E> first = new Node<E>(data);
 		this.node = first;
 		
 		} else {
-		CountryNode add = new CountryNode(country);
-		CountryNode current = this.node;
+		Node<E> add = new Node<E>(data);
+		Node<E> current = this.node;
 			while ( current.getNext() != null) {
 				current = current.getNext();
 				
@@ -62,7 +63,7 @@ public class CountryList {
 	 */
 	public int size() {
 		int size = 0;
-		CountryNode CurrNode = this.node;
+		Node<E> CurrNode = this.node;
 			while(CurrNode != null) {
 				CurrNode = CurrNode.getNext();
 				size++;
@@ -75,12 +76,12 @@ public class CountryList {
 	 * @param 	tmpCountry			the name of the country/object that you want to find.
 	 * @return	Country 			the name of the country or null if the country is not found
 	 */
-	public Country contains(Country tmpCountry) {
+	public E contains(E tmpCountry) {
 		//CountryNode tmp = new CountryNode(tmpCountry);
-		CountryNode curr = this.node;
+		Node<E> curr = this.node;
 		while (curr != null) {
 			
-			if (curr.getCountry().getName().equals(tmpCountry.getName())) {
+			if (curr.getData().getName().equals(tmpCountry.getName())) {
 				return curr.getCountry();	
 			} 	
 			curr = curr.getNext();
@@ -95,48 +96,35 @@ public class CountryList {
 	public String toString(){
 		String result = "";
 		
-		CountryNode current = this.node;
+		Node<E> current = this.node;
 		while(current != null) {
-			result += current.getCountry() + "\n";
+			result += current.getData() + "\n";
 			current = current.getNext();
 		}
 		return result;
-	} 
-	
-	/**
-	 * This method checks to see if the array is null
-	 * @return 			Clones the objects in the method 
-	 */  
-	public CountryList clone() {
-		
-		CountryList copy = new CountryList();
-		if(node != null ) {
-		copy.node = this.node.clone();
-		
-		}
-		return copy;
-	
-	}
-	/**
-	 * This method checks to see if the array is null
-	 * @param		selectedIndex		The index set by the user 
-	 * @param		countryBeforeUpdate	The country you want to set it to before the update
-	 * @return 			Sets the Index 
-	 */  
-
-	public Country setIndex(int selectedIndex, Country countryBeforeUpdate) {
-		int c = 0;
-		CountryNode temp = this.node;
-		
-		
-		while(node != null && c < selectedIndex) {
-			temp = temp.getNext();
-			c++;
-				
-		}
-		temp.setCountry(countryBeforeUpdate);
-		
-		return countryBeforeUpdate;
 	}
 
+
+	@Override
+	public Iterator<E> iterator() {
+		return new Iterator<E>(){
+	        private int current = 1;
+
+	        @Override
+	        public boolean hasNext() {
+	            if(current <= size()){
+	                return true;
+	            }
+	            return false;
+	        }
+
+	        @Override
+	        public E next() {
+	            E data = getIndex(current);
+	            current++;
+	            return data;
+	        }
+
+		}; 
+	}
 }
