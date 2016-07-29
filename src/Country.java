@@ -42,8 +42,9 @@ public class Country  {
 				SubscriptionYear current = subscriptions;
 				while(current.getNext() != null) {
 					current = current.getNext();
-					current.setNode(newNode);
+					
 				}
+				current.setNode(newNode);
 			}
 			
 	}
@@ -77,7 +78,7 @@ public class Country  {
 		SubscriptionYear current = subscriptions;
 		while(current.getNext() != null) {
 			current = current.getNext();
-			if(current.getYear() >= syear || current.getYear() <= eyear) {
+			if(current.getYear() >= syear && current.getYear() <= eyear) {
 				subscription = current.getSubscription() + subscription;
 			}
 			
@@ -125,10 +126,15 @@ public class Country  {
 	 * @return 			If the country name is found or not. 
 	 * @param	obj		The given object in the test case 
 	 */  
-	public boolean equals(Country obj)
+	public boolean equals(Object obj)
 	{
-	    System.out.println("In the equals method");
-	    return this.name.equalsIgnoreCase(obj.name);
+		if(obj == this) {
+			return true;
+		} 
+		else {
+			return false;
+		}
+	  //  return this.name.equals(obj);
 	}
 	
 }

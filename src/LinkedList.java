@@ -20,16 +20,19 @@ public class LinkedList<E> implements Iterable<E>{
 	/**
 	 * A method that gets the country based on the index. 
 	 * @param 		index 			The index of that you want 
-	 * @return		E				the name of the country at the index
+	 * @return		Country			the name of the country at the index
 	 */
 	public E getIndex(int index) {
 		Node<E> current = this.node;
-		if(current == null) {
+		if(index < 0 || index > size()) {
 			return null;
 		}
+		if (index == 0) {
+			return current.getData();
+		}
 		
-		for (int i = 0; i < index ; i++) {
-			if (current != null && current.getNext() == null ) {
+		for (int i = 1; i < index ; i++) {
+			if (current.getNext() == null ) {
 				return null;
 			}
 			current = current.getNext();
@@ -39,7 +42,7 @@ public class LinkedList<E> implements Iterable<E>{
 	
 	/**
 	 * A method that adds a country object to the end of the list. 
-	 * @param 	E				The country object you want to add.
+	 * @param 	country			The country object you want to add.
 	 */
 	public void add(E data) {
 		if( this.node == null) {
@@ -53,7 +56,8 @@ public class LinkedList<E> implements Iterable<E>{
 				current = current.getNext();
 				
 			} 
-			current.setNext(add) ;		
+			current.setNext(add);
+					
 		}
 	}
 	
@@ -76,25 +80,21 @@ public class LinkedList<E> implements Iterable<E>{
 	 * @param 	tmpCountry			the name of the country/object that you want to find.
 	 * @return	Country 			the name of the country or null if the country is not found
 	 */
-	public Country contains(E tmpCountry) {
-		//CountryNode tmp = new CountryNode(tmpCountry);
+	public E contains(E tmpCountry) {
 		Node<E> curr = this.node;
 		while (curr != null && !curr.getData().equals(0)) {
-			/*
-			if (curr.getData().getName().equals(tmpCountry.getName())) {
-				return curr.getCountry();	
+			
+			if (curr.getData().equals(tmpCountry)) {
+				return curr.getData();	
 			} 
-			*/	
+			
 			curr = curr.getNext();
 		}
-		/*	
+		/*
 		if(curr != null) {
 				return curr.getData();
 			}
-			else {
-				return false;
-			}
-		*/
+			*/
 		return null;
 	}
 	
@@ -112,17 +112,12 @@ public class LinkedList<E> implements Iterable<E>{
 		}
 		return result;
 	}
-	
-	/**
-	 * This method is the Iterator   
-	 */
 
-	@Override
+
 	public Iterator<E> iterator() {
 		return new Iterator<E>(){
 	        private int current = 1;
 
-	        @Override
 	        public boolean hasNext() {
 	            if(current <= size()){
 	                return true;
@@ -131,7 +126,6 @@ public class LinkedList<E> implements Iterable<E>{
 	        }
 	        
 	        
-	        @Override
 	        public E next() {
 	            E data = getIndex(current);
 	            current++;
