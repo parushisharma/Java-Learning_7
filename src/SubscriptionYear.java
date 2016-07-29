@@ -75,5 +75,6 @@ public class SubscriptionYear {
 	
 	public SubscriptionYear getNext() {
 		return this.next;
+		
 	}
 }

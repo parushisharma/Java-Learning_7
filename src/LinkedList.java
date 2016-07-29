@@ -126,13 +126,15 @@ public class LinkedList<E> implements Iterable<E>{
 	            }
 	            return false;
 	        }
-
+	        
+	        
 	        @Override
 	        public E next() {
 	            E data = getIndex(current);
 	            current++;
 	            return data;
 	        }
+	        
 
 		}; 
 	}

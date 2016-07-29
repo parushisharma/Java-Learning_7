@@ -23,11 +23,11 @@ public class Country  {
 	 */
 		public void addSubscriptionYear(int year, double countryData) {
 			
-			if (this.minYear > year) {
+			if (year < this.minYear) {
 				this.minYear = year;
 			} 
 			
-			if (this.maxYear < year) {
+			if (year > this.maxYear) {
 				this.maxYear = year;
 			}
 			// check if the new node's year is within the valid range
@@ -75,13 +75,15 @@ public class Country  {
 		if(syear > eyear || eyear > maxYear || syear < minYear) {
 			return -1;
 		} 
+		SubscriptionYear current = subscriptions;
+		while(current.getNext() != null) {
+			current = current.getNext();
+			if(current.getYear() >= syear || current.getYear() <= eyear) {
+				subscription = current.getSubscription() + subscription;
+			}
+			
+		}
 		
-		
-	    for (int i = 0; i < subscriptions.length ; i++ ) {
-	    	if (subscriptions[i].getYear() >= syear && subscriptions[i].getYear() <= eyear) {
-	    		subscription = subscriptions[i].getSubscription() + subscription;
-	    	} 
-	    }
 		return subscription;
 	}
 	
@@ -117,6 +119,12 @@ public class Country  {
 	 */  
 	public boolean isEmpty() {
 	    return (subscriptions == null);
+	}
+	//overrides the equals method and returns country name if found
+	public boolean equals(Country obj)
+	{
+	    System.out.println("In the equals method");
+	    return this.name.equalsIgnoreCase(obj.name);
 	}
 	
 }
