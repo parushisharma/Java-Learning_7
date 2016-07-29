@@ -20,7 +20,7 @@ public class LinkedList<E> implements Iterable<E>{
 	/**
 	 * A method that gets the country based on the index. 
 	 * @param 		index 			The index of that you want 
-	 * @return		Country			the name of the country at the index
+	 * @return		E				the name of the country at the index
 	 */
 	public E getIndex(int index) {
 		Node<E> current = this.node;
@@ -39,7 +39,7 @@ public class LinkedList<E> implements Iterable<E>{
 	
 	/**
 	 * A method that adds a country object to the end of the list. 
-	 * @param 	country			The country object you want to add.
+	 * @param 	E				The country object you want to add.
 	 */
 	public void add(E data) {
 		if( this.node == null) {
@@ -112,7 +112,10 @@ public class LinkedList<E> implements Iterable<E>{
 		}
 		return result;
 	}
-
+	
+	/**
+	 * This method is the Iterator   
+	 */
 
 	@Override
 	public Iterator<E> iterator() {

@@ -7,8 +7,8 @@ public class Node<E> {
 
 	
 	/**
-	 * Constructor that takes in the object of type Country 
-	 * @param 	country					The name of the country 
+	 * A constructor that takes in a generic object as a parameter.  
+	 * @param 	data					The data of the object 
 	 */
 	public Node (E data) {
 		this.data = data;
@@ -16,8 +16,8 @@ public class Node<E> {
 	}
 	
 	/**
-	 * Constructor that takes in two parameters, an object of type 
-	 * Country and an object of type CountryNode.
+	 * A constructor that takes in two parameters, a generic object and an object 
+	 * of parametrized Node type.
 	 * @param 	nameOfCountry				Name of the Country object 
 	 * @param 	node 						A node of type CountryNode
 	 */
@@ -27,8 +27,8 @@ public class Node<E> {
 	}
 	
 	/**
-	 * Getter method for CountryNode 
-	 * @return 	next 		The next country Node 
+	 * Getter method for 	The Linked List 
+	 * @return 	next 		The next Node 
 	 */
 	public Node<E> getNext() {
 		return next;
@@ -36,16 +36,24 @@ public class Node<E> {
 	
 	/**
 	 * Setter method for next 
-	 * @param 	next 		The next country Node 
+	 * @param 	next 		The next Node 
 	 */
 	public void setNext(Node<E> next) {
 		this.next = next;
 	}
-
+	
+	/**
+	 * Getter method for 	Linked List  
+	 * @return 	next 		The next Node 
+	 */
 	public E getData() {
 		return data;
 	}
 	
+	/**
+	 * A method that returns a string containing information about every country in the list.
+	 * @return		string 				The result 
+	 */
 	public String toString(){
 		String result = "";
 		

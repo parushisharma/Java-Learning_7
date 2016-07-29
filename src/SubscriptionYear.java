@@ -1,4 +1,4 @@
-/*
+/**
  * This is a class called SubscriptionYear that contains getters
  * and setters to retrieve required information. 
  * 
@@ -11,7 +11,7 @@ public class SubscriptionYear {
 	SubscriptionYear next;
 	
 	
-	/*
+	/**
 	 *  Constructor method 
 	 *  This method stores the year and it's statistical data.
 	 *  
@@ -24,7 +24,7 @@ public class SubscriptionYear {
 	    this.next = null;
 	}
 	
-	/*
+	/**
 	 * This method sets the year
 	 * 
 	 * @param Year 						Integer of the input year 
@@ -33,7 +33,7 @@ public class SubscriptionYear {
 	    this.year= Year;
 	}
 	
-	/*
+	/**
 	 * This method sets the subscriptions 
 	 * 
 	 * @param value 					The value of the subscription
@@ -42,7 +42,7 @@ public class SubscriptionYear {
 	    this.subscriptions = value;
 	}
 	
-	/*
+	/**
 	 * This method gets the year
 	 * 
 	 * @return the year
@@ -51,7 +51,7 @@ public class SubscriptionYear {
 	    return year;
 	}   
 	
-	/*
+	/**
 	 * This method gets the subscriptions 
 	 * 
 	 * @return subscriptions 
@@ -60,7 +60,7 @@ public class SubscriptionYear {
 	    return subscriptions;
 	}
 	
-	/*
+	/**
 	 * This method prints the value required 
 	 * 
 	 * @return string and subscriptions 
@@ -69,10 +69,20 @@ public class SubscriptionYear {
 	    return "Number of Subscriptions: "+ subscriptions;
 	}
 	
+	/**
+	 * This method sets up the next node in the list  
+	 * 
+	 * @param 	The next node 
+	 */
 	public void setNode(SubscriptionYear next) {
 		this.next = next;
 	}
 	
+	/**
+	 * This method returns the next node in the list  
+	 * 
+	 * @return gets the next node in the List  
+	 */
 	public SubscriptionYear getNext() {
 		return this.next;
 		

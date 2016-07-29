@@ -1,11 +1,9 @@
 /**
  * This class creates new SubscriptionYear objects and saves them
- * in an array. It also takes a starting and ending year that it 
+ * in an linked List. It also takes a starting and ending year that it 
  * pulls out the average subscriptions of. 
  * 
  */
-
-
 public class Country  {
 
 	// Instance variable fields that are private to the user. 
@@ -17,7 +15,7 @@ public class Country  {
 	/**
 	 *  Method that takes in the year, and a single subscription
 	 *  It creates a new SubscriptionYear object and that object 
-	 *  is saved in the subscriptions array
+	 *  is saved in the subscriptions linked List.
 	 *  @param 	year 					Integer of the Year input. 
 	 *  @param  countryData 			The passed data values specific to the country
 	 */
@@ -51,7 +49,8 @@ public class Country  {
 	}
 	/**
 	 * Method acts as a constructor that will be used to create a temporary Country 
-	 * object that has the information about the name of the Country given. 
+	 * object that has the information about the name of the Country given.
+	 * @param	countryNameToFind 		The name of the country given in test case  
 	 */
 	public Country(String countryNameToFind) { 
 		this.name = countryNameToFind;
@@ -89,10 +88,9 @@ public class Country  {
 	
 	/**
 	 *  Method which returns a representation of the country 
+	 *  overrides the toString method and prints out the countries.
 	 *  @return 			The string and the subscriptions 
 	 */
-	// 
-	//overrides the toString method and prints out the countries.
 	public String toString()
 	{
 	    String result="";
@@ -105,6 +103,7 @@ public class Country  {
 	    }
 	    return result;
 	}
+	
 	/**
 	 * This method returns countryName
 	 * @return 				The name of the country 
@@ -120,7 +119,12 @@ public class Country  {
 	public boolean isEmpty() {
 	    return (subscriptions == null);
 	}
-	//overrides the equals method and returns country name if found
+	
+	/**
+	 * overrides the equals method and returns country name if found
+	 * @return 			If the country name is found or not. 
+	 * @param	obj		The given object in the test case 
+	 */  
 	public boolean equals(Country obj)
 	{
 	    System.out.println("In the equals method");
