@@ -8,6 +8,7 @@ public class SubscriptionYear {
 	// Instances are private to the user. 
 	private int year;
 	private double subscriptions;
+	SubscriptionYear next;
 	
 	
 	/*
@@ -20,6 +21,7 @@ public class SubscriptionYear {
 	public SubscriptionYear(int year,double subscriptions) {
 	    setYear(year);
 	    setSubscription(subscriptions);
+	    this.next = null;
 	}
 	
 	/*
@@ -66,5 +68,12 @@ public class SubscriptionYear {
 	public String toString() {
 	    return "Number of Subscriptions: "+ subscriptions;
 	}
-
+	
+	public void setNode(SubscriptionYear next) {
+		this.next = next;
+	}
+	
+	public SubscriptionYear getNext() {
+		return this.next;
+	}
 }
