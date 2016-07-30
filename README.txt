@@ -16,13 +16,13 @@ src/ SubscriptionYear.java
 	- Creates the methods required by Country.java 
 	- methods include getting and setting variables such as year, subscriptions and a toString method
 
-src/TestCountryList.java 
+src/TestGenericList.java 
 	- Code given by instructor with the test cases. 
 	
-src/CountryNode.java
+src/Node.java
 	- Builds the nodes for the linked list; used in CountryList.java 
 
-src/CountryList.java 
+src/LinkedList.java 
 	- Builds the linked list required by the test file. It makes it easier to add objects/countries
   
 resources/RUN.txt
