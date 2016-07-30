@@ -1,3 +1,5 @@
+import java.util.Objects;
+
 /**
  * This class creates new SubscriptionYear objects and saves them
  * in an linked List. It also takes a starting and ending year that it 
@@ -126,15 +128,21 @@ public class Country  {
 	 * @return 			If the country name is found or not. 
 	 * @param	obj		The given object in the test case 
 	 */  
-	public boolean equals(Object obj)
+	public boolean equals(Object tmpCountry)
 	{
-		if(obj == this) {
+		if(this == tmpCountry){
 			return true;
-		} 
-		else {
-			return false;
 		}
-	  //  return this.name.equals(obj);
+		else if (!(tmpCountry instanceof Country)) {
+			return false;
+			
+		} else {
+		Country c = (Country) tmpCountry;
+		if( this.getName().equals(c.getName()) ) {
+			return true;
+		}
+		}
+		return false;
 	}
 	
 }

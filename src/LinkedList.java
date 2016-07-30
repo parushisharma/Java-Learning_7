@@ -86,16 +86,20 @@ public class LinkedList<E> implements Iterable<E>{
 			
 			if (curr.getData().equals(tmpCountry)) {
 				return curr.getData();	
+				
 			} 
+			//return curr.getData();	
 			
 			curr = curr.getNext();
+			
 		}
-		/*
+		
 		if(curr != null) {
 				return curr.getData();
+			} else {
+				return null;
 			}
-			*/
-		return null;
+			
 	}
 	
 	/**
@@ -124,7 +128,10 @@ public class LinkedList<E> implements Iterable<E>{
 	            }
 	            return false;
 	        }
-	        
+	     // not implemented for now
+			public void remove() {
+				throw new UnsupportedOperationException();
+			}
 	        
 	        public E next() {
 	            E data = getIndex(current);

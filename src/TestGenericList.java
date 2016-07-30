@@ -25,6 +25,8 @@ public class TestGenericList
 	{
 		// TODO: The purpose is to help you debug
 		// Note: The implementation of method is optional.
+		
+		
 	}
 
 	/**
@@ -188,7 +190,7 @@ public class TestGenericList
 		// TODO: Initially, to test your output you may hard-code the number of 
 		//       countries added, and the array positions selected.
 		//		 However, make sure to comment this out before submitting your work.
-		//application.debugListOfCountries(countries);
+		application.debugListOfCountries(countries);
 
 		LinkedList<Country> selectedCountryList = application.createRandomListOfCountries(countries);
 
