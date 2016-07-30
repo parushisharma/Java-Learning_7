@@ -4,7 +4,7 @@
  *  the attributes stored in CSVReader object to create objects of type Country class.
  *  Then adds countries to a singly linked list.
  *
- * @author Foothill College, [YOUR NAME HERE]
+ * @author Foothill College, Parushi Sharma 
  */
 
 import java.util.Random;
