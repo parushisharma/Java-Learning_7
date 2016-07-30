@@ -71,11 +71,11 @@ public class Country  {
 		if(eyear > maxYear || syear < minYear) {
 			throw new IllegalArgumentException("New node's year is not within the valid range of years"); 	
 		}
-		/*
-		if(syear > eyear || eyear > maxYear || syear < minYear) {
+		
+		if(eyear > maxYear || syear < minYear) {
 			return -1;
 		} 
-		*/
+		
 		SubscriptionYear current = subscriptions;
 		while(current.getNext() != null) {
 			current = current.getNext();
