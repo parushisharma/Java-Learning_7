@@ -41,11 +41,19 @@ public class Node<E> {
 	public void setNext(Node<E> next) {
 		this.next = next;
 	}
-
+	
+	/**
+	 * Getter method for data 
+	 * @return	 	data 		Of the next country Node 
+	 */
 	public E getData() {
 		return data;
 	}
 	
+	/**
+	 * A method that returns a string containing information about every country in the list.
+	 * @return		string 				The result 
+	 */
 	public String toString(){
 		String result = "";
 		

@@ -10,7 +10,6 @@ public class LinkedList<E> implements Iterable<E>{
 	
 	/**
 	 * Constructor that sets up the node. 
-	 * 
 	 */
 	public LinkedList () {
 		this.node = null;
@@ -83,15 +82,11 @@ public class LinkedList<E> implements Iterable<E>{
 	public E contains(E tmpCountry) {
 		Node<E> curr = this.node;
 		while (curr != null && !curr.getData().equals(0)) {
-			
-			if (curr.getData().equals(tmpCountry)) {
+				if (curr.getData().equals(tmpCountry)) {
 				return curr.getData();	
 				
 			} 
-			//return curr.getData();	
-			
-			curr = curr.getNext();
-			
+			curr = curr.getNext();	
 		}
 		
 		if(curr != null) {
@@ -116,23 +111,35 @@ public class LinkedList<E> implements Iterable<E>{
 		}
 		return result;
 	}
-
-
+	
+	/**
+	 * An Iteratory method that returns if there is a next and the next value. 
+	 * @return		string 				The result 
+	 */
 	public Iterator<E> iterator() {
 		return new Iterator<E>(){
 	        private int current = 1;
-
+	        
+	        /**
+	    	 * Checks to see if there is a next or not 
+	    	 * @return		boolean 		If there is a next or not 
+	    	 */
 	        public boolean hasNext() {
 	            if(current <= size()){
 	                return true;
 	            }
 	            return false;
 	        }
+	        
 	     // not implemented for now
 			public void remove() {
 				throw new UnsupportedOperationException();
 			}
-	        
+			
+			/**
+			 * A method that returns a string containing information about every country in the list.
+			 * @return		E 				The data 
+			 */
 	        public E next() {
 	            E data = getIndex(current);
 	            current++;

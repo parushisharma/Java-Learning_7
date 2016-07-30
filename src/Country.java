@@ -1,5 +1,3 @@
-import java.util.Objects;
-
 /**
  * This class creates new SubscriptionYear objects and saves them
  * in an linked List. It also takes a starting and ending year that it 
