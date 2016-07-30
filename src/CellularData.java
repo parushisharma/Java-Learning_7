@@ -53,6 +53,7 @@ public class CellularData {
 	 * @param Country				The name of the country  
 	 * @param sYear					The starting year 
 	 * @param eYear					The ending year 
+	 * @return sum 					The sum of the subscriptions 
 	 */
 	public double getNumSubscriptionsInCountryForPeriod(String country, int sYear, int eYear) {
 		System.out.println("Country is " + "\"" + country +"\"," + " subscriptions from " + sYear + " to " + eYear);
