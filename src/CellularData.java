@@ -30,7 +30,7 @@ public class CellularData {
 	/**
 	 *this method adds the single array of data given by the user in the
 	 *test file into the double array created in the method above. 
-	 * @param Country				The name of the country  
+	 * @param country				The name of the country  
 	 * @param num					The array with the values of the country. 
 	 */
 	public void addCountry(String country, double []num) {
@@ -50,7 +50,7 @@ public class CellularData {
 	 *This method first checks the name of the country given and the names of the country in the table
 	 *then proceeds to find the index of the starting/ending year given by the test file to find the sum 
 	 * of the subscriptions of the proper country's subscriptions  in the proper years.
-	 * @param Country				The name of the country  
+	 * @param country				The name of the country  
 	 * @param sYear					The starting year 
 	 * @param eYear					The ending year 
 	 * @return sum 					The sum of the subscriptions 

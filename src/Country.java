@@ -125,7 +125,7 @@ public class Country  {
 	/**
 	 * overrides the equals method and returns country name if found
 	 * @return 			If the country name is found or not. 
-	 * @param	obj		The given object in the test case 
+	 * @param	tmpCountry		The given object in the test case 
 	 */  
 	public boolean equals(Object tmpCountry)
 	{

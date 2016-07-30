@@ -20,7 +20,7 @@ public class TestGenericList
 
 	/**
 	 * Builds a list of countries to debug.
-	 */
+	 
 	private void debugListOfCountries(Country [] allCountries)
 	{
 		// TODO: The purpose is to help you debug
@@ -28,11 +28,13 @@ public class TestGenericList
 		
 		
 	}
-
+	*/
+	
 	/**
 	 * Creates a generic linked list. Then based on the user's input,
 	 * adds a random number of countries to the list.
 	 * @param allCountries      An array of Country objects
+	 * @return selectedCountries The Selected Countries for that time. 
 	 */
 	private LinkedList<Country> createRandomListOfCountries(Country [] allCountries)
 	{	
@@ -139,6 +141,7 @@ public class TestGenericList
 	 * Uses a CSV to parse a CSV file.
 	 * Adds the data for each country to an array of Country objects.
 	 * Adds a random selection of countries to a generic LinkedList object.
+	 * @param args 	To get rid of the error 
 	 */
 	public static void main(String[] args) 
 	{		
@@ -190,7 +193,7 @@ public class TestGenericList
 		// TODO: Initially, to test your output you may hard-code the number of 
 		//       countries added, and the array positions selected.
 		//		 However, make sure to comment this out before submitting your work.
-		application.debugListOfCountries(countries);
+		//application.debugListOfCountries(countries);
 
 		LinkedList<Country> selectedCountryList = application.createRandomListOfCountries(countries);
 

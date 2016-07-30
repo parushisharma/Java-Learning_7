@@ -41,7 +41,7 @@ public class LinkedList<E> implements Iterable<E>{
 	
 	/**
 	 * A method that adds a country object to the end of the list. 
-	 * @param 	country			The country object you want to add.
+	 * @param 	data			The data of the country object you want to add.
 	 */
 	public void add(E data) {
 		if( this.node == null) {

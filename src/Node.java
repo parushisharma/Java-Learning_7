@@ -7,8 +7,8 @@ public class Node<E> {
 
 	
 	/**
-	 * Constructor that takes in the object of type Country 
-	 * @param 	country					The name of the country 
+	 * Constructor that takes in the object of type E 
+	 * @param 	data					The name of the country 
 	 */
 	public Node (E data) {
 		this.data = data;
@@ -18,8 +18,8 @@ public class Node<E> {
 	/**
 	 * Constructor that takes in two parameters, an object of type 
 	 * Country and an object of type CountryNode.
-	 * @param 	nameOfCountry				Name of the Country object 
-	 * @param 	node 						A node of type CountryNode
+	 * @param 	initialData				Name of the Country object 
+	 * @param 	initialLink 						A node of type CountryNode
 	 */
 	public Node (E initialData, Node<E> initialLink) {
 		this.data = initialData;
