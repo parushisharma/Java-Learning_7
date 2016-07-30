@@ -1,13 +1,22 @@
 import java.io.FileNotFoundException;
 import java.util.Scanner;
 
+/**
+ * This file reads through the CSV file. 
+ * @author parushi
+ *
+ */
 public class CSVReader {
 	private String[] countryNames;
 	private int[] yearLabels;
 	private double[][] cellularDatatables;
 	Scanner scan;
-
-	//throws FileNotFoundException. This method sets up the Scanner and reads in a filename given in the test file. 
+	
+	/**
+	 * throws FileNotFoundException. This method sets up the Scanner and reads in a filename given in the test file. 
+	 * @param filename The file name given 
+	 */
+	
 	public CSVReader(String filename) { 
 	    try {
 	    java.io.File file = new java.io.File(filename);
@@ -52,22 +61,36 @@ public class CSVReader {
 	    }
 	}
 	
-	// This method returns the country names 
+	/**
+	 * This method returns the country names 
+	 * @return Country names 
+	 */
+	
 	public String[] getCountryNames() {
 		return this.countryNames;
 	}
-	    
-	// This method returns the getYearlabels 
+	
+	/**
+	 * This method returns the getYearlabels 
+	 * @return The year labels 
+	 */
+	
 	public int[] getYearLabels() {
 		return this.yearLabels;
 	}
-	    
-	// This method returns the cellularDatatables 
+	  /**
+	   * This method returns the cellularDatatables 
+	   * @return the tables 
+	   */
+	
 	public double[][] getParsedTable() {
 		return this.cellularDatatables;
 	}
-	    
-	// This method returns the number of years 
+	/**
+	 * // This method returns the number of years 
+	 * @return Int with number of years 
+	 */
+	
 	public int getNumberOfYears() {
 		return this.yearLabels.length;
 	}
