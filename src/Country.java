@@ -28,11 +28,7 @@ public class Country  {
 			if (year > this.maxYear) {
 				this.maxYear = year;
 			}
-			// check if the new node's year is within the valid range
-						if(year > maxYear || year < minYear) {
-							throw new IllegalArgumentException("New node's year is not within the valid range of years");
-							
-						}
+			
 			SubscriptionYear newNode = new SubscriptionYear(year,countryData);
 			if(this.isEmpty()) {
 				newNode.setNode(subscriptions);
@@ -71,10 +67,15 @@ public class Country  {
 	
 	public double getNumSubscriptionsForPeriod(int syear, int eyear) {
 		double subscription = 0;
-		
+		// check if the new node's year is within the valid range
+		if(eyear > maxYear || syear < minYear) {
+			throw new IllegalArgumentException("New node's year is not within the valid range of years"); 	
+		}
+		/*
 		if(syear > eyear || eyear > maxYear || syear < minYear) {
 			return -1;
 		} 
+		*/
 		SubscriptionYear current = subscriptions;
 		while(current.getNext() != null) {
 			current = current.getNext();
