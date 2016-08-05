@@ -1,0 +1,63 @@
+FEEDBACK:
+
+-10% late submission.
+
+
+Your implementation does not demonstrate iterating over the elements of your
+    LinkedList data structure. This was a key requirement of the project.
+    
+For future, show all requested output to avoid an incomplete. 
+If you need clarification, ask in appropriate discussion forum.
+
+
+-3 Incomplete implementation of class Country getNumSupscriptionsForPeriod() method,
+   which should use an iterator to traverse the subscriptions 
+   as required by project description:
+   "Use an iterator in the getNumSupscriptionsForPeriod() method of the Country class. 
+   This method should use the iterator to traverse the list of SubscriptionYear elements."
+
+
+-2 Missing using an iterator in the LinkedList toString() method
+   as required by project description.
+   This is was straightforward modification. Why exclude it?
+
+
+-2 Incomplete implementation of class "ListIterator" inside class LinkedList.
+	This class should be "private" inner class as required by project description:
+"ListIterator
+
+An inner class of LinkedList that is used to traverse the collection of objects in the list..."
+
+
+
+-0 Do *not* change method signatures. 
+   This includes handling of exceptions, etc.
+   Otherwise when I run my own test file, this results in compilation errors,
+   which does not allow me to run your implementation and would impact your grade.
+
+   See sample sample output below.
+   
+-Bita.
+
+
+
+sample output:
+...
+Country Names: 0 French Polynesia
+1 Azerbaijan, 2 New Zealand, 3 Burkina Faso, 4 Marshall Islands, 5 Montenegro, 6 South Sudan, 7 Guam, 8 Venezuela RB, 9 Vanuatu, 10 Ireland
+11 Cabo Verde, 12 Egypt Arab Rep., 13 Hong Kong SAR China, 14 Tunisia, 15 Japan, 16 Cyprus, 17 Ireland, 
+
+What country are you interested in? Enter a number between 0 and 17 
+Requested country name 17 to search...
+
+
+What subscription period do you want to total? Enter [starting year],[end year].
+Total subscriptions for Cyprus between 1960 and 2012 is 1003.856137
+
+What subscription period do you want to total? Enter [starting year],[end year].
+Requested period between 1959 and 2016 for Cyprus 
+Exception in thread "main" java.lang.IllegalArgumentException: New node's year is not within the valid range of years
+	at Country.getNumSubscriptionsForPeriod(Country.java:72)
+	at InstructorTest.testSubscriptionsTotalInList(InstructorTest.java:221)
+	at InstructorTest.main(InstructorTest.java:299)
+
